@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Austin's most common baby names</title>
+<style>
+  :root{
+    color-scheme: light;
+    --surface-1:#fcfcfb; --surface-2:#f4f3f0; --surface-3:#eceae6;
+    --line:#dedcd6;
+    --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#7a7873;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+    --div-lo:#2a78d6; --div-mid:#e6e4df; --div-hi:#e34948;
+    --seq-1:#cde2fb; --seq-2:#9ec5f4; --seq-3:#6da7ec;
+    --seq-4:#3987e5; --seq-5:#2a78d6; --seq-6:#256abf; --seq-7:#184f95;
+    --focus:#0b0b0b;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      color-scheme: dark;
+      --surface-1:#1a1a19; --surface-2:#232322; --surface-3:#2d2d2b;
+      --line:#3a3a37;
+      --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#8f8e86;
+      --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+      --div-lo:#3987e5; --div-mid:#383835; --div-hi:#e66767;
+      --seq-1:#184f95; --seq-2:#1c5cab; --seq-3:#256abf;
+      --seq-4:#2a78d6; --seq-5:#3987e5; --seq-6:#5598e7; --seq-7:#86b6ef;
+      --focus:#ffffff;
+    }
+  }
+  html,body{margin:0;padding:0;background:transparent}
+  .gv *{box-sizing:border-box}
+  .gv{
+    color:var(--text-primary); background:transparent;
+    font:15px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%;
+    padding:14px 14px 18px; max-width:1360px; margin:0 auto;
+  }
+  @media (max-width:560px){ .gv{padding:10px 10px 14px} }
+  .gv h1{font-size:21px;letter-spacing:-.02em;margin:0 0 3px;line-height:1.2}
+  .gv .standfirst{margin:0;color:var(--text-secondary);font-size:13px}
+  .gv .standfirst b{color:var(--text-primary);font-variant-numeric:tabular-nums}
+  .gv .credit{margin:14px 0 0;color:var(--text-muted);font-size:11.5px;line-height:1.6}
+  .gv .card{background:var(--surface-2);border:1px solid var(--line);border-radius:12px}
+  .gv .sr{position:absolute;width:1px;height:1px;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* segmented control -- shared by every embed's toggles */
+  .gv .ctl{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .gv .ctl > span,.gv .ctl > label{font-size:11px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--text-muted)}
+  .gv .seg{display:flex;flex-wrap:wrap;gap:3px;background:var(--surface-3);
+    padding:3px;border-radius:9px}
+  .gv .seg button{
+    border:0;background:transparent;color:var(--text-secondary);font:inherit;font-size:13px;
+    padding:7px 12px;border-radius:6px;cursor:pointer;font-variant-numeric:tabular-nums;
+    min-height:38px;                      /* comfortable touch target */
+  }
+  .gv .seg button:hover{color:var(--text-primary)}
+  .gv .seg button[aria-pressed="true"]{background:var(--surface-1);color:var(--text-primary);
+    font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.10)}
+  .gv .seg button:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+
+  .gv .tabgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  @media (max-width:640px){.gv .tabgrid{grid-template-columns:1fr;gap:14px}}
+  .gv .tabcard{padding:12px 14px 14px}
+  .gv .tabcard h2{font-size:14px;margin:0 0 8px;letter-spacing:.02em}
+  .gv table.top{width:100%;border-collapse:collapse;font-size:13.5px;
+    font-variant-numeric:tabular-nums}
+  .gv table.top th{text-align:left;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--text-muted);font-weight:600;
+    padding:0 0 5px;border-bottom:1px solid var(--line)}
+  .gv table.top th.num,.gv table.top td.num{text-align:right}
+  .gv table.top td{padding:5px 0;border-top:1px solid var(--line)}
+  .gv table.top td.rk{color:var(--text-muted);width:2.6em}
+  .gv table.top tbody tr:hover{background:var(--surface-3)}
+  .gv table.top td.nm{width:60%}
+
+</style>
+</head>
+<body>
+<div class="gv" id="root">
+
+<h1>Austin's 100 most common baby names</h1>
+<p class="standfirst">2017–2024 · the most recent data available from Austin Public Health</p>
+<div class="tabgrid">
+<div class="card tabcard">
+<h2>Girls</h2>
+<table class="top">
+<thead><tr><th>#</th><th>Name</th><th class="num">Babies</th></tr></thead>
+<tbody>
+<tr><td class='rk'>1</td><td class='nm'>Olivia</td><td class='num'>720</td></tr>
+<tr><td class='rk'>2</td><td class='nm'>Emma</td><td class='num'>692</td></tr>
+<tr><td class='rk'>3</td><td class='nm'>Mia</td><td class='num'>634</td></tr>
+<tr><td class='rk'>4</td><td class='nm'>Isabella</td><td class='num'>630</td></tr>
+<tr><td class='rk'>5</td><td class='nm'>Camila</td><td class='num'>575</td></tr>
+<tr><td class='rk'>6</td><td class='nm'>Sofia</td><td class='num'>527</td></tr>
+<tr><td class='rk'>7</td><td class='nm'>Sophia</td><td class='num'>522</td></tr>
+<tr><td class='rk'>8</td><td class='nm'>Evelyn</td><td class='num'>521</td></tr>
+<tr><td class='rk'>9</td><td class='nm'>Charlotte</td><td class='num'>512</td></tr>
+<tr><td class='rk'>10</td><td class='nm'>Amelia</td><td class='num'>456</td></tr>
+<tr><td class='rk'>11</td><td class='nm'>Ava</td><td class='num'>441</td></tr>
+<tr><td class='rk'>12</td><td class='nm'>Emily</td><td class='num'>400</td></tr>
+<tr><td class='rk'>13</td><td class='nm'>Elizabeth</td><td class='num'>386</td></tr>
+<tr><td class='rk'>13</td><td class='nm'>Zoe</td><td class='num'>386</td></tr>
+<tr><td class='rk'>15</td><td class='nm'>Luna</td><td class='num'>377</td></tr>
+<tr><td class='rk'>16</td><td class='nm'>Penelope</td><td class='num'>364</td></tr>
+<tr><td class='rk'>17</td><td class='nm'>Mila</td><td class='num'>352</td></tr>
+<tr><td class='rk'>18</td><td class='nm'>Eleanor</td><td class='num'>347</td></tr>
+<tr><td class='rk'>19</td><td class='nm'>Abigail</td><td class='num'>328</td></tr>
+<tr><td class='rk'>20</td><td class='nm'>Avery</td><td class='num'>325</td></tr>
+<tr><td class='rk'>21</td><td class='nm'>Harper</td><td class='num'>315</td></tr>
+<tr><td class='rk'>22</td><td class='nm'>Ella</td><td class='num'>304</td></tr>
+<tr><td class='rk'>22</td><td class='nm'>Scarlett</td><td class='num'>304</td></tr>
+<tr><td class='rk'>24</td><td class='nm'>Elena</td><td class='num'>298</td></tr>
+<tr><td class='rk'>25</td><td class='nm'>Victoria</td><td class='num'>289</td></tr>
+<tr><td class='rk'>25</td><td class='nm'>Violet</td><td class='num'>289</td></tr>
+<tr><td class='rk'>27</td><td class='nm'>Lily</td><td class='num'>282</td></tr>
+<tr><td class='rk'>28</td><td class='nm'>Emilia</td><td class='num'>275</td></tr>
+<tr><td class='rk'>29</td><td class='nm'>Aria</td><td class='num'>273</td></tr>
+<tr><td class='rk'>30</td><td class='nm'>Chloe</td><td class='num'>272</td></tr>
+<tr><td class='rk'>31</td><td class='nm'>Maya</td><td class='num'>258</td></tr>
+<tr><td class='rk'>32</td><td class='nm'>Lucy</td><td class='num'>252</td></tr>
+<tr><td class='rk'>33</td><td class='nm'>Hannah</td><td class='num'>242</td></tr>
+<tr><td class='rk'>34</td><td class='nm'>Nora</td><td class='num'>241</td></tr>
+<tr><td class='rk'>35</td><td class='nm'>Layla</td><td class='num'>237</td></tr>
+<tr><td class='rk'>36</td><td class='nm'>Hazel</td><td class='num'>236</td></tr>
+<tr><td class='rk'>37</td><td class='nm'>Ellie</td><td class='num'>235</td></tr>
+<tr><td class='rk'>38</td><td class='nm'>Isla</td><td class='num'>234</td></tr>
+<tr><td class='rk'>39</td><td class='nm'>Genesis</td><td class='num'>230</td></tr>
+<tr><td class='rk'>40</td><td class='nm'>Aurora</td><td class='num'>226</td></tr>
+<tr><td class='rk'>41</td><td class='nm'>Josephine</td><td class='num'>225</td></tr>
+<tr><td class='rk'>42</td><td class='nm'>Grace</td><td class='num'>224</td></tr>
+<tr><td class='rk'>43</td><td class='nm'>Stella</td><td class='num'>221</td></tr>
+<tr><td class='rk'>44</td><td class='nm'>Madison</td><td class='num'>219</td></tr>
+<tr><td class='rk'>45</td><td class='nm'>Eliana</td><td class='num'>218</td></tr>
+<tr><td class='rk'>46</td><td class='nm'>Naomi</td><td class='num'>214</td></tr>
+<tr><td class='rk'>47</td><td class='nm'>Ximena</td><td class='num'>205</td></tr>
+<tr><td class='rk'>48</td><td class='nm'>Gianna</td><td class='num'>204</td></tr>
+<tr><td class='rk'>49</td><td class='nm'>Lillian</td><td class='num'>203</td></tr>
+<tr><td class='rk'>49</td><td class='nm'>Ruby</td><td class='num'>203</td></tr>
+<tr><td class='rk'>51</td><td class='nm'>Natalia</td><td class='num'>195</td></tr>
+<tr><td class='rk'>52</td><td class='nm'>Allison</td><td class='num'>194</td></tr>
+<tr><td class='rk'>52</td><td class='nm'>Claire</td><td class='num'>194</td></tr>
+<tr><td class='rk'>54</td><td class='nm'>Leah</td><td class='num'>192</td></tr>
+<tr><td class='rk'>54</td><td class='nm'>Riley</td><td class='num'>192</td></tr>
+<tr><td class='rk'>56</td><td class='nm'>Valentina</td><td class='num'>190</td></tr>
+<tr><td class='rk'>57</td><td class='nm'>Natalie</td><td class='num'>188</td></tr>
+<tr><td class='rk'>58</td><td class='nm'>Zoey</td><td class='num'>187</td></tr>
+<tr><td class='rk'>59</td><td class='nm'>Cora</td><td class='num'>185</td></tr>
+<tr><td class='rk'>60</td><td class='nm'>Madeline</td><td class='num'>181</td></tr>
+<tr><td class='rk'>61</td><td class='nm'>Audrey</td><td class='num'>180</td></tr>
+<tr><td class='rk'>62</td><td class='nm'>Addison</td><td class='num'>177</td></tr>
+<tr><td class='rk'>62</td><td class='nm'>Alice</td><td class='num'>177</td></tr>
+<tr><td class='rk'>62</td><td class='nm'>Lucia</td><td class='num'>177</td></tr>
+<tr><td class='rk'>65</td><td class='nm'>Valeria</td><td class='num'>174</td></tr>
+<tr><td class='rk'>66</td><td class='nm'>Caroline</td><td class='num'>172</td></tr>
+<tr><td class='rk'>67</td><td class='nm'>Samantha</td><td class='num'>169</td></tr>
+<tr><td class='rk'>68</td><td class='nm'>Clara</td><td class='num'>166</td></tr>
+<tr><td class='rk'>68</td><td class='nm'>Eva</td><td class='num'>166</td></tr>
+<tr><td class='rk'>68</td><td class='nm'>Maria</td><td class='num'>166</td></tr>
+<tr><td class='rk'>71</td><td class='nm'>Emery</td><td class='num'>165</td></tr>
+<tr><td class='rk'>72</td><td class='nm'>Sophie</td><td class='num'>164</td></tr>
+<tr><td class='rk'>73</td><td class='nm'>Everly</td><td class='num'>163</td></tr>
+<tr><td class='rk'>74</td><td class='nm'>Delilah</td><td class='num'>161</td></tr>
+<tr><td class='rk'>74</td><td class='nm'>Julia</td><td class='num'>161</td></tr>
+<tr><td class='rk'>76</td><td class='nm'>Andrea</td><td class='num'>160</td></tr>
+<tr><td class='rk'>77</td><td class='nm'>Ashley</td><td class='num'>157</td></tr>
+<tr><td class='rk'>77</td><td class='nm'>June</td><td class='num'>157</td></tr>
+<tr><td class='rk'>77</td><td class='nm'>Nova</td><td class='num'>157</td></tr>
+<tr><td class='rk'>80</td><td class='nm'>Liliana</td><td class='num'>156</td></tr>
+<tr><td class='rk'>81</td><td class='nm'>Margot</td><td class='num'>155</td></tr>
+<tr><td class='rk'>82</td><td class='nm'>Leilani</td><td class='num'>154</td></tr>
+<tr><td class='rk'>83</td><td class='nm'>Ivy</td><td class='num'>153</td></tr>
+<tr><td class='rk'>83</td><td class='nm'>Jade</td><td class='num'>153</td></tr>
+<tr><td class='rk'>85</td><td class='nm'>Quinn</td><td class='num'>152</td></tr>
+<tr><td class='rk'>86</td><td class='nm'>Ariana</td><td class='num'>151</td></tr>
+<tr><td class='rk'>87</td><td class='nm'>Vivian</td><td class='num'>147</td></tr>
+<tr><td class='rk'>88</td><td class='nm'>Adeline</td><td class='num'>146</td></tr>
+<tr><td class='rk'>88</td><td class='nm'>Katherine</td><td class='num'>146</td></tr>
+<tr><td class='rk'>90</td><td class='nm'>Madelyn</td><td class='num'>145</td></tr>
+<tr><td class='rk'>91</td><td class='nm'>Savannah</td><td class='num'>143</td></tr>
+<tr><td class='rk'>92</td><td class='nm'>Melanie</td><td class='num'>140</td></tr>
+<tr><td class='rk'>93</td><td class='nm'>Isabel</td><td class='num'>137</td></tr>
+<tr><td class='rk'>93</td><td class='nm'>Kennedy</td><td class='num'>137</td></tr>
+<tr><td class='rk'>93</td><td class='nm'>Margaret</td><td class='num'>137</td></tr>
+<tr><td class='rk'>93</td><td class='nm'>Sadie</td><td class='num'>137</td></tr>
+<tr><td class='rk'>97</td><td class='nm'>Aaliyah</td><td class='num'>135</td></tr>
+<tr><td class='rk'>98</td><td class='nm'>Brooklyn</td><td class='num'>134</td></tr>
+<tr><td class='rk'>98</td><td class='nm'>Daisy</td><td class='num'>134</td></tr>
+<tr><td class='rk'>98</td><td class='nm'>Sarah</td><td class='num'>134</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card tabcard">
+<h2>Boys</h2>
+<table class="top">
+<thead><tr><th>#</th><th>Name</th><th class="num">Babies</th></tr></thead>
+<tbody>
+<tr><td class='rk'>1</td><td class='nm'>Liam</td><td class='num'>846</td></tr>
+<tr><td class='rk'>2</td><td class='nm'>Noah</td><td class='num'>699</td></tr>
+<tr><td class='rk'>3</td><td class='nm'>Oliver</td><td class='num'>650</td></tr>
+<tr><td class='rk'>4</td><td class='nm'>Mateo</td><td class='num'>644</td></tr>
+<tr><td class='rk'>5</td><td class='nm'>James</td><td class='num'>593</td></tr>
+<tr><td class='rk'>6</td><td class='nm'>William</td><td class='num'>592</td></tr>
+<tr><td class='rk'>7</td><td class='nm'>Henry</td><td class='num'>575</td></tr>
+<tr><td class='rk'>8</td><td class='nm'>Sebastian</td><td class='num'>565</td></tr>
+<tr><td class='rk'>9</td><td class='nm'>Benjamin</td><td class='num'>557</td></tr>
+<tr><td class='rk'>10</td><td class='nm'>Jack</td><td class='num'>497</td></tr>
+<tr><td class='rk'>11</td><td class='nm'>Daniel</td><td class='num'>492</td></tr>
+<tr><td class='rk'>12</td><td class='nm'>Elijah</td><td class='num'>484</td></tr>
+<tr><td class='rk'>13</td><td class='nm'>Theodore</td><td class='num'>483</td></tr>
+<tr><td class='rk'>14</td><td class='nm'>Alexander</td><td class='num'>479</td></tr>
+<tr><td class='rk'>15</td><td class='nm'>Dylan</td><td class='num'>473</td></tr>
+<tr><td class='rk'>16</td><td class='nm'>Lucas</td><td class='num'>466</td></tr>
+<tr><td class='rk'>17</td><td class='nm'>Ethan</td><td class='num'>465</td></tr>
+<tr><td class='rk'>18</td><td class='nm'>John</td><td class='num'>459</td></tr>
+<tr><td class='rk'>19</td><td class='nm'>Santiago</td><td class='num'>446</td></tr>
+<tr><td class='rk'>20</td><td class='nm'>Julian</td><td class='num'>433</td></tr>
+<tr><td class='rk'>21</td><td class='nm'>David</td><td class='num'>415</td></tr>
+<tr><td class='rk'>22</td><td class='nm'>Samuel</td><td class='num'>412</td></tr>
+<tr><td class='rk'>23</td><td class='nm'>Luke</td><td class='num'>409</td></tr>
+<tr><td class='rk'>24</td><td class='nm'>Jose</td><td class='num'>394</td></tr>
+<tr><td class='rk'>25</td><td class='nm'>Levi</td><td class='num'>388</td></tr>
+<tr><td class='rk'>26</td><td class='nm'>Jacob</td><td class='num'>379</td></tr>
+<tr><td class='rk'>27</td><td class='nm'>Jackson</td><td class='num'>368</td></tr>
+<tr><td class='rk'>28</td><td class='nm'>Michael</td><td class='num'>363</td></tr>
+<tr><td class='rk'>29</td><td class='nm'>Miles</td><td class='num'>362</td></tr>
+<tr><td class='rk'>30</td><td class='nm'>Logan</td><td class='num'>359</td></tr>
+<tr><td class='rk'>31</td><td class='nm'>Leo</td><td class='num'>352</td></tr>
+<tr><td class='rk'>32</td><td class='nm'>Owen</td><td class='num'>347</td></tr>
+<tr><td class='rk'>33</td><td class='nm'>Anthony</td><td class='num'>340</td></tr>
+<tr><td class='rk'>34</td><td class='nm'>Ezra</td><td class='num'>339</td></tr>
+<tr><td class='rk'>35</td><td class='nm'>Aiden</td><td class='num'>334</td></tr>
+<tr><td class='rk'>36</td><td class='nm'>Joseph</td><td class='num'>329</td></tr>
+<tr><td class='rk'>36</td><td class='nm'>Matthew</td><td class='num'>329</td></tr>
+<tr><td class='rk'>38</td><td class='nm'>Isaac</td><td class='num'>326</td></tr>
+<tr><td class='rk'>39</td><td class='nm'>Elias</td><td class='num'>323</td></tr>
+<tr><td class='rk'>39</td><td class='nm'>Hudson</td><td class='num'>323</td></tr>
+<tr><td class='rk'>41</td><td class='nm'>Wyatt</td><td class='num'>320</td></tr>
+<tr><td class='rk'>42</td><td class='nm'>Charles</td><td class='num'>319</td></tr>
+<tr><td class='rk'>43</td><td class='nm'>Angel</td><td class='num'>317</td></tr>
+<tr><td class='rk'>44</td><td class='nm'>Asher</td><td class='num'>316</td></tr>
+<tr><td class='rk'>44</td><td class='nm'>Luca</td><td class='num'>316</td></tr>
+<tr><td class='rk'>46</td><td class='nm'>Gabriel</td><td class='num'>311</td></tr>
+<tr><td class='rk'>47</td><td class='nm'>Joshua</td><td class='num'>308</td></tr>
+<tr><td class='rk'>48</td><td class='nm'>Ian</td><td class='num'>306</td></tr>
+<tr><td class='rk'>49</td><td class='nm'>Christopher</td><td class='num'>305</td></tr>
+<tr><td class='rk'>49</td><td class='nm'>Jayden</td><td class='num'>305</td></tr>
+<tr><td class='rk'>51</td><td class='nm'>Caleb</td><td class='num'>293</td></tr>
+<tr><td class='rk'>52</td><td class='nm'>Thomas</td><td class='num'>285</td></tr>
+<tr><td class='rk'>53</td><td class='nm'>Diego</td><td class='num'>284</td></tr>
+<tr><td class='rk'>54</td><td class='nm'>Gael</td><td class='num'>280</td></tr>
+<tr><td class='rk'>55</td><td class='nm'>Leonardo</td><td class='num'>277</td></tr>
+<tr><td class='rk'>56</td><td class='nm'>Josiah</td><td class='num'>276</td></tr>
+<tr><td class='rk'>57</td><td class='nm'>Grayson</td><td class='num'>273</td></tr>
+<tr><td class='rk'>58</td><td class='nm'>Nathan</td><td class='num'>270</td></tr>
+<tr><td class='rk'>59</td><td class='nm'>Christian</td><td class='num'>268</td></tr>
+<tr><td class='rk'>60</td><td class='nm'>Aaron</td><td class='num'>267</td></tr>
+<tr><td class='rk'>60</td><td class='nm'>Adrian</td><td class='num'>267</td></tr>
+<tr><td class='rk'>62</td><td class='nm'>Axel</td><td class='num'>256</td></tr>
+<tr><td class='rk'>63</td><td class='nm'>Andrew</td><td class='num'>255</td></tr>
+<tr><td class='rk'>64</td><td class='nm'>Nolan</td><td class='num'>254</td></tr>
+<tr><td class='rk'>65</td><td class='nm'>Ezekiel</td><td class='num'>249</td></tr>
+<tr><td class='rk'>66</td><td class='nm'>Mason</td><td class='num'>244</td></tr>
+<tr><td class='rk'>67</td><td class='nm'>Jonathan</td><td class='num'>242</td></tr>
+<tr><td class='rk'>68</td><td class='nm'>Isaiah</td><td class='num'>231</td></tr>
+<tr><td class='rk'>69</td><td class='nm'>Everett</td><td class='num'>226</td></tr>
+<tr><td class='rk'>70</td><td class='nm'>Austin</td><td class='num'>225</td></tr>
+<tr><td class='rk'>70</td><td class='nm'>Thiago</td><td class='num'>225</td></tr>
+<tr><td class='rk'>72</td><td class='nm'>Lincoln</td><td class='num'>224</td></tr>
+<tr><td class='rk'>72</td><td class='nm'>Luis</td><td class='num'>224</td></tr>
+<tr><td class='rk'>74</td><td class='nm'>Juan</td><td class='num'>222</td></tr>
+<tr><td class='rk'>75</td><td class='nm'>Ryan</td><td class='num'>218</td></tr>
+<tr><td class='rk'>76</td><td class='nm'>Jesus</td><td class='num'>215</td></tr>
+<tr><td class='rk'>77</td><td class='nm'>Brooks</td><td class='num'>211</td></tr>
+<tr><td class='rk'>78</td><td class='nm'>Kai</td><td class='num'>208</td></tr>
+<tr><td class='rk'>79</td><td class='nm'>Carter</td><td class='num'>198</td></tr>
+<tr><td class='rk'>79</td><td class='nm'>Damian</td><td class='num'>198</td></tr>
+<tr><td class='rk'>79</td><td class='nm'>Eli</td><td class='num'>198</td></tr>
+<tr><td class='rk'>82</td><td class='nm'>Carlos</td><td class='num'>197</td></tr>
+<tr><td class='rk'>82</td><td class='nm'>Roman</td><td class='num'>197</td></tr>
+<tr><td class='rk'>84</td><td class='nm'>Robert</td><td class='num'>194</td></tr>
+<tr><td class='rk'>85</td><td class='nm'>Cooper</td><td class='num'>191</td></tr>
+<tr><td class='rk'>86</td><td class='nm'>August</td><td class='num'>186</td></tr>
+<tr><td class='rk'>87</td><td class='nm'>Cameron</td><td class='num'>185</td></tr>
+<tr><td class='rk'>88</td><td class='nm'>Emiliano</td><td class='num'>184</td></tr>
+<tr><td class='rk'>89</td><td class='nm'>Jeremiah</td><td class='num'>183</td></tr>
+<tr><td class='rk'>89</td><td class='nm'>Jude</td><td class='num'>183</td></tr>
+<tr><td class='rk'>91</td><td class='nm'>Jaxon</td><td class='num'>178</td></tr>
+<tr><td class='rk'>91</td><td class='nm'>Maverick</td><td class='num'>178</td></tr>
+<tr><td class='rk'>93</td><td class='nm'>Max</td><td class='num'>175</td></tr>
+<tr><td class='rk'>94</td><td class='nm'>Wesley</td><td class='num'>174</td></tr>
+<tr><td class='rk'>95</td><td class='nm'>Alan</td><td class='num'>170</td></tr>
+<tr><td class='rk'>96</td><td class='nm'>Parker</td><td class='num'>169</td></tr>
+<tr><td class='rk'>97</td><td class='nm'>Bennett</td><td class='num'>168</td></tr>
+<tr><td class='rk'>97</td><td class='nm'>Jordan</td><td class='num'>168</td></tr>
+<tr><td class='rk'>99</td><td class='nm'>Adam</td><td class='num'>165</td></tr>
+<tr><td class='rk'>100</td><td class='nm'>Arthur</td><td class='num'>164</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<p class="credit">Source: City of Austin new-resident-name records; Texas statewide top-100 name lists.</p>
+
+</div>
+<script>
+"use strict";
+
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function hex2rgb(h){ h=h.replace("#",""); if(h.length===3) h=h.split("").map(c=>c+c).join("");
+  return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)]; }
+function mix(a,b,t){ const A=hex2rgb(a),B=hex2rgb(b);
+  return `rgb(${Math.round(A[0]+(B[0]-A[0])*t)},${Math.round(A[1]+(B[1]-A[1])*t)},${Math.round(A[2]+(B[2]-A[2])*t)})`; }
+// Diverging: two poles through a neutral midpoint, never a hue at the middle.
+function diverge(v, cap){
+  const t = Math.max(-1, Math.min(1, (v||0)/cap));
+  return t >= 0 ? mix(css("--div-mid"), css("--div-hi"), t)
+                : mix(css("--div-mid"), css("--div-lo"), -t);
+}
+// Relative luminance, so a label can pick ink that survives whatever fill it
+// lands on -- the sequential and diverging ramps both run pale to dark.
+function lum(col){
+  let r,g,b;
+  if(col[0] === "#"){ [r,g,b] = hex2rgb(col); }
+  else { const m = col.match(/\d+/g); r=+m[0]; g=+m[1]; b=+m[2]; }
+  const f = v => { v/=255; return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4); };
+  return 0.2126*f(r) + 0.7152*f(g) + 0.0722*f(b);
+}
+// Accent- and punctuation-insensitive: typing "jose" must reach JOSÉ.
+const fold = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().trim();
+const esc  = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+
+// --- responsive embed height -------------------------------------------
+// Same contract as the food-inspection embeds: the child broadcasts its own
+// height and the host page sizes the iframe. Body, not documentElement --
+// <html> stretches to the viewport when the parent oversizes the frame, which
+// locks the reported height at whatever the parent last set.
+function postHeight(){
+  var b = document.body, cs = getComputedStyle(b);
+  var h = b.getBoundingClientRect().height +
+          parseFloat(cs.marginTop || 0) + parseFloat(cs.marginBottom || 0);
+  window.parent.postMessage({
+    embed: "austin-baby-names",
+    slug: (location.pathname.split("/").pop() || "").replace(".html", ""),
+    height: Math.ceil(h)
+  }, "*");
+}
+postHeight();
+addEventListener("load", postHeight);
+addEventListener("resize", postHeight);
+// Fonts landing late change the wrap points and therefore the height.
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(postHeight);
+if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
+
+</script>
+</body>
+</html>
