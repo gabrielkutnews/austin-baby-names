@@ -120,13 +120,13 @@
       <table><tbody id="aufav"></tbody></table></div>
     <div class="card gaps"><h3>More popular across Texas</h3>
       <table><tbody id="txfav"></tbody></table></div>
-    <div class="card gaps"><h3>In Austin's top 100, absent from Texas's</h3>
+    <div class="card gaps"><h3>Popular Austin names absent from Texas' top 100</h3>
       <table><tbody id="txmiss"></tbody></table></div>
   </div>
 </div>
 <p class="sr" id="slopecap"></p>
 <p class="vsnote" id="vsnote"></p>
-<p class="credit">Source: City of Austin new-resident-name records; Texas statewide top-100 name lists.</p>
+<p class="credit">Source: City of Austin new-resident-name records; Social Security Administration.</p>
 
 </div>
 <script>
@@ -196,9 +196,7 @@ function drawVs(){
   const kids = vsSex === "FEMALE" ? "girls" : "boys";
 
   document.getElementById("vslede").innerHTML =
-    `Of the <b>${c.ofAu}</b> ${kids}' names in Austin's top 100 for <b>2017–2024</b>, ` +
-    `<b>${c.inBoth}</b> also make the Texas top 100 — <b>${Math.round(100*c.inBoth/c.ofAu)}%</b>. ` +
-    `Austin's ranking sits beside Texas's below; a line joins any name in both.`;
+    `The chart below shows how the most popular Austin names compare to the most popular names statewide.`;
 
   const W = Math.max(260, Math.round(wrap.clientWidth - 18));
   const narrow = W < 460;
