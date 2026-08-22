@@ -100,7 +100,7 @@
 <div class="gv" id="root">
 
 <h1>How Austin baby names compare with the rest of the state</h1>
-<p class="standfirst">This chart shows baby names for the latest city data available on record, spanning from 2017-2024. Statewide data comes from the Social Security Administration.</p>
+<p class="standfirst">This chart compares Austin and statewide baby-name rankings for 2024. Statewide data comes from the Social Security Administration.</p>
 
 <div class="hd">
   <div class="ctl"><span id="lb-vs" class="sr">Sex</span>
@@ -131,7 +131,7 @@
 </div>
 <script>
 "use strict";
-const DATA = {"names":["Aaliyah","Abigail","Adrian","Alexander","Amelia","Angel","Ariana","Arthur","August","Ava","Avery","Benjamin","Bennett","Brooklyn","Cameron","Camila","Charles","Charlotte","Claire","Clara","Cora","Daniel","David","Dylan","Eleanor","Elijah","Elizabeth","Emily","Emma","Ethan","Evelyn","Everett","Ezekiel","Genesis","Harper","Henry","Isabel","Isabella","Isla","Ivy","Jack","Jackson","Jacob","James","Jaxon","Jayden","Jeremiah","John","Jose","Josephine","Josiah","Juan","Jude","Julian","June","Leilani","Leo","Levi","Liam","Lillian","Lucas","Lucy","Luna","Madeline","Madelyn","Margot","Mateo","Matthew","Max","Maya","Melanie","Mia","Mila","Miles","Noah","Nora","Oliver","Olivia","Owen","Penelope","Quinn","Santiago","Sarah","Scarlett","Sebastian","Sofia","Sophia","Stella","Theodore","Victoria","Vivian","Wesley","William","Zoe"],"cmp":{"FEMALE":{"au":{"i":[77,28,71,37,15,85,86,30,17,4,9,27,26,93,62,79,72,24,1,10],"rank":[1,2,3,4,5,6,7,8,9,10,11,12,13,13,15,16,17,18,19,20],"n":[720,692,634,630,575,527,522,521,512,456,441,400,386,386,377,364,352,347,328,325],"tx":[2,2,4,4,4,8,6,11,11,9,8,14,15,25,16,25,24,37,18,20]},"tx":{"i":[28,77,37,15,71,86,85,9,4,17,30,27,89,26,62,1,10,83,34,33],"rank":[2,2,4,4,4,6,8,8,9,11,11,14,15,15,16,18,20,20,23,23],"n":[15596,14861,13354,13042,12926,12054,9709,9484,9141,8091,7919,7097,7049,6614,6864,6618,6061,5767,5592,5507],"au":[2,1,4,5,3,7,6,11,10,9,8,12,25,13,15,19,20,22,21,39]},"inBoth":91,"ofAu":100,"auFav":{"i":[61,69,75,38,18,59,63,87],"au":[32,31,34,38,52,49,60,43],"tx":[84,74,77,77,80,74,84,66],"d":[52,43,43,39,28,25,24,23]},"txFav":{"i":[0,6,55,70,13,64,39,82],"au":[97,86,82,92,98,90,83,98],"tx":[52,46,43,58,64,64,60,76],"d":[-45,-40,-39,-34,-34,-26,-23,-22]},"missing":{"i":[49,20,19,54,65,80,90,36],"au":[41,59,68,77,81,85,87,93],"n":[225,185,166,157,155,152,147,137]}},"MALE":{"au":{"i":[58,74,76,66,43,92,35,84,11,40,21,25,88,3,23,60,29,47,81,53],"rank":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"n":[846,699,650,644,593,592,575,565,557,497,492,484,483,479,473,466,465,459,446,433],"tx":[1,2,11,3,14,18,41,4,13,64,8,5,56,14,23,19,14,33,9,14]},"tx":{"i":[58,74,66,84,25,21,81,76,48,11,29,53,3,43,22,92,67,60,42,57],"rank":[1,2,3,4,5,8,9,11,13,13,14,14,14,14,17,18,19,19,20,20],"n":[19287,16858,14301,12467,12138,9822,10771,9974,9017,8846,8909,8767,8742,8725,8509,8315,8411,8290,8313,8075],"au":[1,2,4,8,12,11,19,3,24,9,17,20,14,5,21,6,36,16,26,25]},"inBoth":92,"ofAu":100,"auFav":{"i":[73,40,88,78,16,35,56,41],"au":[29,10,13,32,42,7,31,27],"tx":[85,64,56,74,83,41,64,57],"d":[56,54,43,42,41,34,33,30]},"txFav":{"i":[44,51,2,46,50,32,5,45],"au":[91,74,60,89,56,65,43,49],"tx":[63,48,35,64,32,41,21,28],"d":[-28,-26,-25,-25,-24,-24,-22,-21]},"missing":{"i":[31,8,14,52,68,91,12,7],"au":[69,86,87,89,93,94,97,100],"n":[226,186,185,183,175,174,168,164]}}}};
+const DATA = {"year":2024,"names":["Adrian","Amelia","Angel","Archer","Arthur","August","Aurora","Austin","Ava","Axel","Benjamin","Bennett","Brooks","Camila","Charles","Charlotte","Daniel","Dylan","Eleanor","Elena","Eliana","Elias","Elijah","Elizabeth","Ellie","Eloise","Emily","Emma","Ethan","Evelyn","Everett","Ezekiel","Ezra","Genesis","Gianna","Hayes","Henry","Iris","Isabella","Isaiah","Isla","Jack","Jackson","James","John","Jose","Josephine","Josiah","Julian","Leah","Levi","Liam","Lily","Logan","Luca","Lucas","Lucia","Lucy","Luis","Luna","Madeline","Margot","Mateo","Maya","Mia","Miles","Natalia","Noah","Nolan","Nora","Oliver","Olivia","Owen","Parker","Penelope","Samuel","Santiago","Sebastian","Sofia","Sophia","Sophie","Theodore","Valentina","Victoria","Violet","Wesley","William","Zoe"],"cmp":{"FEMALE":{"au":{"i":[27,71,64,38,79,13,15,78,19,1,26,23,29,59,74,18,56,87,84,52],"rank":[1,1,3,4,5,6,6,8,9,10,10,12,13,13,15,16,17,17,19,20],"n":[86,86,82,73,71,66,66,63,58,56,56,55,50,50,49,46,45,45,44,43],"tx":[2,1,3,5,6,4,9,8,19,7,16,15,11,12,35,27,57,18,26,28]},"tx":{"i":[71,27,64,13,38,79,1,78,15,20,29,59,34,8,23,26,82,87,19,6],"rank":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"n":[1765,1759,1691,1628,1561,1363,1269,1234,1021,999,955,924,868,819,815,772,759,734,729,727],"au":[1,1,3,6,4,5,10,8,6,29,13,13,24,29,12,10,52,17,9,33]},"inBoth":85,"ofAu":106,"auFav":{"i":[63,56,69,40,80,60,37,57],"au":[25,17,25,35,60,40,57,35],"tx":[68,57,65,74,99,77,88,60],"d":[43,40,40,39,39,37,31,25]},"txFav":{"i":[82,33,20,49,24,66,8,83],"au":[52,52,29,60,40,60,29,35],"tx":[17,22,10,42,23,43,14,21],"d":[-35,-30,-19,-18,-17,-17,-15,-14]},"missing":{"i":[46,61,73,25],"au":[33,49,56,60],"n":[36,29,27,25]}},"MALE":{"au":{"i":[51,70,62,67,81,77,76,17,36,43,86,54,41,48,44,55,22,28,10,45],"rank":[1,2,3,4,5,6,7,8,9,9,9,12,13,13,15,16,17,17,19,19],"n":[144,101,98,94,91,84,76,75,70,70,70,67,66,66,65,62,61,61,60,60],"tx":[1,7,3,2,30,5,4,13,29,19,21,32,63,12,28,11,6,14,16,18]},"tx":{"i":[51,67,62,76,77,22,70,21,32,16,55,48,17,28,50,10,2,45,43,75],"rank":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"n":[3090,2404,2097,1726,1565,1435,1318,1153,1126,1119,1102,1091,1064,1045,1045,1018,1015,1015,1010,978],"au":[1,4,3,7,6,17,2,33,28,39,16,13,8,17,24,19,33,19,9,37]},"inBoth":86,"ofAu":105,"auFav":{"i":[41,72,65,42,68,12,14,53],"au":[13,26,22,33,48,57,52,42],"tx":[63,75,69,80,90,99,92,71],"d":[50,49,47,47,42,42,40,29]},"txFav":{"i":[0,39,16,47,58,21,31,9],"au":[68,78,39,64,81,33,51,84],"tx":[38,48,10,37,54,8,27,60],"d":[-30,-30,-29,-27,-27,-25,-24,-24]},"missing":{"i":[85,4,11,3,30,5,7,35],"au":[48,55,57,64,64,68,77,81],"n":[38,34,33,32,32,31,29,27]}}}};
 
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 function hex2rgb(h){ h=h.replace("#",""); if(h.length===3) h=h.split("").map(c=>c+c).join("");
@@ -195,8 +195,8 @@ function drawVs(){
   if(!c) return;
   const kids = vsSex === "FEMALE" ? "girls" : "boys";
 
-  document.getElementById("vslede").innerHTML =
-    `The chart below shows how the most popular Austin names compare to the most popular names statewide.`;
+  document.getElementById("vslede").textContent =
+    `The chart below shows how the most popular Austin ${kids}' names in ${DATA.year} compare to the most popular names statewide.`;
 
   const W = Math.max(260, Math.round(wrap.clientWidth - 18));
   const narrow = W < 460;
@@ -234,17 +234,15 @@ function drawVs(){
   });
   slope.innerHTML = s;
   document.getElementById("slopecap").textContent =
-    `Austin's top ${N} ${kids}' names for 2017–2024 beside the Texas top ${N}, joined where a name appears in both.`;
+    `Austin's top ${N} ${kids}' names for ${DATA.year} beside the Texas top ${N}, joined where a name appears in both.`;
 
   gapRows("aufav",  c.auFav,   "up");
   gapRows("txfav",  c.txFav,   "dn");
   gapRows("txmiss", c.missing, "");
 
   document.getElementById("vsnote").textContent =
-    "Gaps are shown only for names in both top 100s with at least 25 Austin births — Texas publishes " +
-    "no rank below its top 100, so a missing name is unranked, not 101. Across 2017–2024 the Texas " +
-    "figure is the average of the ranks Texas actually published, counting only names it listed in " +
-    "at least four of the eight years.";
+    `Gaps are shown only for names in both ${DATA.year} top 100s with at least 25 Austin births. Texas publishes ` +
+    "no rank below its top 100, so a missing name is unranked, not 101.";
 }
 
 // drawVs() measures wrap.clientWidth itself, so the first render is already
@@ -283,3 +281,4 @@ if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body)
 </script>
 </body>
 </html>
+
