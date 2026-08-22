@@ -240,11 +240,6 @@ function drawVs(){
   gapRows("txfav",  c.txFav,   "dn");
   gapRows("txmiss", c.missing, "");
 
-  document.getElementById("vsnote").textContent =
-    `Gaps are shown only for names in both ${DATA.year} top 100s with at least 25 Austin births. Texas publishes ` +
-    "no rank below its top 100, so a missing name is unranked, not 101.";
-}
-
 // drawVs() measures wrap.clientWidth itself, so the first render is already
 // correct for the current width; these are only redraw triggers. The observer
 // is retained because an unreferenced one can be collected in some engines.
