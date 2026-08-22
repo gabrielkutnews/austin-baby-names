@@ -118,28 +118,23 @@ var_ship <- variants %>%
 VAR <- setNames(as.list(var_ship$v), as.character(var_ship$i))
 
 # ---- Austin vs Texas ---------------------------------------------------
-TOPC <- 20L; MIN_CMP <- 25L; MIN_YRS <- 4L
+TOPC <- 20L; MIN_CMP <- 25L; CMP_YEAR <- 2024L
 
 build_cmp <- function(sx) {
-  au <- period %>% filter(sex == sx) %>% select(name_canon, rank, n)
-  # Pooling by summed COUNT would invent Texas ranks past 100 for names Texas
-  # simply omitted in some years -- exactly the false precision the truncated
-  # source forbids. Average the ranks Texas actually published instead, and
-  # keep how many of the 8 lists the name appeared in.
-  tx <- texas %>% filter(sex == sx) %>%
-    group_by(name_canon) %>%
-    summarise(tx_rank = as.integer(round(mean(tx_rank))), yrs = n(),
-              tx_n = sum(tx_n), .groups = "drop") %>%
-    arrange(tx_rank, desc(tx_n))
+  au <- by_year %>%
+    filter(year == CMP_YEAR, sex == sx) %>%
+    select(name_canon, rank, n)
+  tx <- texas %>%
+    filter(year == CMP_YEAR, sex == sx) %>%
+    select(name_canon, tx_rank, tx_n) %>%
+    arrange(tx_rank, desc(tx_n), name_canon)
 
-  j <- au %>% left_join(tx %>% select(name_canon, tx_rank, yrs), by = "name_canon")
+  j <- au %>% left_join(tx %>% select(name_canon, tx_rank), by = "name_canon")
   au_top <- j  %>% arrange(rank, name_canon) %>% head(TOPC)
   tx_top <- tx %>% arrange(tx_rank, desc(tx_n)) %>% head(TOPC) %>%
     left_join(au %>% select(name_canon, rank), by = "name_canon")
 
-  # Require the name on at least half the Texas lists, so an averaged rank is
-  # not built from one fluke year.
-  gaps <- j %>% filter(!is.na(tx_rank), rank <= 100, n >= MIN_CMP, yrs >= MIN_YRS) %>%
+  gaps <- j %>% filter(!is.na(tx_rank), rank <= 100, n >= MIN_CMP) %>%
     mutate(d = tx_rank - rank)
   fav <- function(df) list(i = unname(IDX[df$name_canon]), au = df$rank,
                            tx = df$tx_rank, d = df$d)
@@ -184,7 +179,8 @@ cmp_small <- lapply(cmp, function(c) {
   c$missing$i <- reindex(c$missing$i)
   c
 })
-texas_data <- toJSON(list(names = idx_tbl$name_display[used + 1L], cmp = cmp_small),
+texas_data <- toJSON(list(year = CMP_YEAR,
+                          names = idx_tbl$name_display[used + 1L], cmp = cmp_small),
                      auto_unbox = TRUE, na = "null")
 
 writeLines(embed_html("babynames-texas", "Austin baby names vs Texas",

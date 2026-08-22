@@ -37,8 +37,8 @@ texas_css <- function() r"---(
 )---"
 
 texas_body <- function() paste0(r"---(
-<h1>How Austin baby names compare with Texas</h1>
-<p class="standfirst">)---", STANDFIRST, r"---(</p>
+<h1>How Austin baby names compare with the rest of the state</h1>
+<p class="standfirst">This chart compares Austin and statewide baby-name rankings for 2024. Statewide data comes from the Social Security Administration.</p>
 
 <div class="hd">
   <div class="ctl"><span id="lb-vs" class="sr">Sex</span>
@@ -58,13 +58,13 @@ texas_body <- function() paste0(r"---(
       <table><tbody id="aufav"></tbody></table></div>
     <div class="card gaps"><h3>More popular across Texas</h3>
       <table><tbody id="txfav"></tbody></table></div>
-    <div class="card gaps"><h3>In Austin's top 100, absent from Texas's</h3>
+    <div class="card gaps"><h3>Popular Austin names absent from Texas' top 100</h3>
       <table><tbody id="txmiss"></tbody></table></div>
   </div>
 </div>
 <p class="sr" id="slopecap"></p>
 <p class="vsnote" id="vsnote"></p>
-<p class="credit">)---", CREDIT, r"---(</p>
+<p class="credit">Source: City of Austin new-resident-name records; Social Security Administration.</p>
 )---")
 
 texas_js <- function() r"---(
@@ -105,10 +105,8 @@ function drawVs(){
   if(!c) return;
   const kids = vsSex === "FEMALE" ? "girls" : "boys";
 
-  document.getElementById("vslede").innerHTML =
-    `Of the <b>${c.ofAu}</b> ${kids}' names in Austin's top 100 for <b>2017–2024</b>, ` +
-    `<b>${c.inBoth}</b> also make the Texas top 100 — <b>${Math.round(100*c.inBoth/c.ofAu)}%</b>. ` +
-    `Austin's ranking sits beside Texas's below; a line joins any name in both.`;
+  document.getElementById("vslede").textContent =
+    `The chart below shows how the most popular Austin ${kids}' names in ${DATA.year} compare to the most popular names statewide.`;
 
   const W = Math.max(260, Math.round(wrap.clientWidth - 18));
   const narrow = W < 460;
@@ -146,17 +144,15 @@ function drawVs(){
   });
   slope.innerHTML = s;
   document.getElementById("slopecap").textContent =
-    `Austin's top ${N} ${kids}' names for 2017–2024 beside the Texas top ${N}, joined where a name appears in both.`;
+    `Austin's top ${N} ${kids}' names for ${DATA.year} beside the Texas top ${N}, joined where a name appears in both.`;
 
   gapRows("aufav",  c.auFav,   "up");
   gapRows("txfav",  c.txFav,   "dn");
   gapRows("txmiss", c.missing, "");
 
   document.getElementById("vsnote").textContent =
-    "Gaps are shown only for names in both top 100s with at least 25 Austin births — Texas publishes " +
-    "no rank below its top 100, so a missing name is unranked, not 101. Across 2017–2024 the Texas " +
-    "figure is the average of the ranks Texas actually published, counting only names it listed in " +
-    "at least four of the eight years.";
+    `Gaps are shown only for names in both ${DATA.year} top 100s with at least 25 Austin births. Texas publishes ` +
+    "no rank below its top 100, so a missing name is unranked, not 101.";
 }
 
 // drawVs() measures wrap.clientWidth itself, so the first render is already
